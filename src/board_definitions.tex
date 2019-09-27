@@ -25,7 +25,7 @@
 }
 
 \newcommand{\fillspaceoffset}[3]{
-  \draw [pattern=north west lines, pattern color=gray, fill=white] (\boardedge+#3+#1*\spacewidth, #2*\spaceheight) rectangle (\boardedge+#3+#1*\spacewidth+\spacewidth, #2*\spaceheight+\spaceheight);
+  \draw [pattern=north west lines, pattern color=gray] (\boardedge+#3+#1*\spacewidth, #2*\spaceheight) rectangle (\boardedge+#3+#1*\spacewidth+\spacewidth, #2*\spaceheight+\spaceheight);
 }
 
 \newcommand{\startingspace}[3]{
@@ -35,10 +35,4 @@
     \begin{center}
       \color{gray}{\Huge \textbf #3}\end{center}
   };
-}
-
-\newcommand{\hasghost}[]{
-  \node at () {
-  	
-  }
 }

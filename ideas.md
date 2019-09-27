@@ -12,3 +12,10 @@ X is equal to 2 plus twice the number of round markers the player have, includin
 * Mines (place a mine marker on the board after leaving a spot)
 * Oil (place an oil marker to the side of the card)
 * Jet Boost (Move up to two extra spaces immediately, roll an additional stress die this turn)
+
+### Speed Boost Spaces
+Some spaces good let players move faster, thus making board advancement less predictable
+
+### Row displacement on same board
+Currently the rows on the board are always displaced in the same way.
+It would allow better tracks if the individual rows could be displaced.

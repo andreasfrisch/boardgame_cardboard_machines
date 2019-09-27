@@ -16,6 +16,10 @@ The September entry for my 2019 Boardgame Prototype Challenge (https://gist.gith
 _Note: Stress is not related to the mental disease of the same name. Instead it represents the pressure applied to both driver and vehicle during a race_
 
 ## Setup
+Place the board with starting spaces on the table.
+Shuffle the remaining boards and place 1 board behind the starting board (white side up) and 4 other boards in front of the starting board.
+Make sure the arrows all point in the same direction.
+
 Choose a starting player.
 Starting from the starting player and going clockwise, each player places a car on consecutive starting spaces, starting from 1, then 2, etc.
 
@@ -68,7 +72,7 @@ If any player was present on the furthest back board as it was removed, those pl
 ##### Placing a board
 When placing a board make sure to align the arrows in the driving direction.
 
-If the board has one or more ghost-symbols, the moving player may place a ghost on any of the empty squares of the new board before continuing his move.
+If the board has dark edges, the moving player may place a ghost on any of the empty squares of the new board before continuing his move.
  
 #### Moving through ghosts
 If a player moves into a space with a ghost, that player immediately receives 1 Stress.
@@ -86,6 +90,9 @@ Then that player receives 1 Stress.
 #### Ending in terrain
 If a player ends in terrain, that player immediately crashes.
 
+#### Moving past start tile
+When a player moves through the row which contained her starting space, if that player is the first to do so for the round, she receives a round token.
+
 ### Testing for Stress
 After moving, a player will test what effect their current stress level had on their driving.
 
@@ -94,8 +101,15 @@ First; If a player did not change gear this turn, and did not incur any stress d
 Then the player rolls 1 die for each stress token they currently posses.
 Each die has 4 different faces; Blank, Swerve Left, Swerve Right, Malfunction
 
+D6 Table:
+1: Blank
+2-3: Swerve Left
+4-5: Swerve Right
+6: Malfunction
+
 Remove all blank dice: The driver is in control.
 Then remove all pairs of 1 Swerve Left and 1 Swerve Right: The driver may be swerving, but the overall direction remains somewhat the same.
+Then the player may gain 1 Stress to cancel 1 Swerve die. A player may only elect to gain Stress if he has 6 or less Stress already.
 
 Lastly, in any order, evaluate the remaining dice.
 For each remaining Swerve die, move on space in that direction.
@@ -108,7 +122,7 @@ All normal rules for movement applies to these bonus movements, but the player m
 If a player rolls 2 Malfunction at the same time, the player crashes immediately.
 
 A player can at most roll 6 stress dice.
-However, If a player has more than 6 stress, all blank dice must be rerolled
+However, If a player has more than 6 stress, add 1 to all dice rolled
 
 ## Crashing
 When a player crashes, do the following in order

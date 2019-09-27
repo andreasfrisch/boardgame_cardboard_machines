@@ -1,0 +1,44 @@
+% Sizes
+\pgfmathsetmacro{\boardedge}{1.5}
+\pgfmathsetmacro{\spacewidth}{1.2}
+\pgfmathsetmacro{\spaceheight}{1.8}
+\pgfmathsetmacro{\boardwidth}{6*\spacewidth+2*\boardedge}
+\pgfmathsetmacro{\boardheight}{2*\spaceheight}
+
+% Shapes
+\def\shapeBoard{(0,0) rectangle (\boardwidth,\boardheight)}
+
+% Commands
+\newcommand{\boardborder}[1]{
+  \draw[lightgray, fill=#1] \shapeBoard;
+}
+
+\newcommand{\directionarrows}{
+  \draw [fill=black] (0.2,0.2) -- (0.3,0.5) -- (0.4,0.2) -- (0.3,0.3) -- cycle;
+  \draw [fill=black] (\boardwidth-0.2,0.2) -- (\boardwidth-0.3,0.5) -- (\boardwidth-0.4,0.2) -- (\boardwidth-0.3,0.3) -- cycle;
+}
+
+\newcommand{\drawspacesoffset}[1]{
+  \foreach \r in {0,...,1} 
+    \foreach \c in {0,...,5} 
+      {\draw [fill=white] (\boardedge+#1+\c*\spacewidth, \r*\spaceheight) rectangle (\boardedge+#1+\c*\spacewidth+\spacewidth, \r*\spaceheight+\spaceheight);}
+}
+
+\newcommand{\fillspaceoffset}[3]{
+  \draw [pattern=north west lines, pattern color=gray, fill=white] (\boardedge+#3+#1*\spacewidth, #2*\spaceheight) rectangle (\boardedge+#3+#1*\spacewidth+\spacewidth, #2*\spaceheight+\spaceheight);
+}
+
+\newcommand{\startingspace}[3]{
+  \draw (\boardedge+#1*\spacewidth+0.2, #2*\spaceheight+\spaceheight-0.4) -- (\boardedge+#1*\spacewidth+0.2, #2*\spaceheight+\spaceheight-0.2) -- (\boardedge+#1*\spacewidth+0.4, #2*\spaceheight+\spaceheight-0.2);
+  \draw (\boardedge+#1*\spacewidth+\spacewidth-0.2, #2*\spaceheight+\spaceheight-0.4) -- (\boardedge+#1*\spacewidth+\spacewidth-0.2, #2*\spaceheight+\spaceheight-0.2) -- (\boardedge+#1*\spacewidth+\spacewidth-0.4, #2*\spaceheight+\spaceheight-0.2);
+  \node [text width=1cm] at (\boardedge+#1*\spacewidth+0.5*\spacewidth, #2*\spaceheight+0.5*\spaceheight) {
+    \begin{center}
+      \color{gray}{\Huge \textbf #3}\end{center}
+  };
+}
+
+\newcommand{\hasghost}[]{
+  \node at () {
+  	
+  }
+}

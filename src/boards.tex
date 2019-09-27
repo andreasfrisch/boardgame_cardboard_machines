@@ -1,0 +1,38 @@
+\documentclass[a4paper]{article}
+\input{libs.tex}
+\input{board_definitions.tex}
+
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+\hyphenpenalty=10000
+
+\noindent
+\begin{tikzpicture}
+	%starting board
+	\boardborder{white}
+	\directionarrows
+	\drawspacesoffset{0}
+	\startingspace{1}{0}{1}
+	\startingspace{3}{0}{2}
+	\startingspace{4}{1}{3}
+	\startingspace{2}{1}{4}
+\end{tikzpicture}%
+\newline
+\noindent
+\begin{tikzpicture}
+	\boardborder{white}
+	\directionarrows
+	\drawspacesoffset{0.5*\spacewidth}
+	\fillspaceoffset{3}{1}{0.5*\spacewidth}
+\end{tikzpicture}%
+\newline
+\noindent
+\begin{tikzpicture}
+	\boardborder{gray}
+	\directionarrows
+	\drawspacesoffset{-0.5*\spacewidth}
+	\fillspaceoffset{3}{1}{-0.5*\spacewidth}
+\end{tikzpicture}%
+\end{center}
+\end{document}
